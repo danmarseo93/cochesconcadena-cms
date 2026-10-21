@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Textos y traducciones · CochesConCadena</title>
+    <style>
+      body { margin: 0; font: 16px/1.6 system-ui, sans-serif; color: #e2e8f0; background: #0f172a; }
+      #setup { box-sizing: border-box; max-width: 620px; margin: 8vh auto; padding: 32px; }
+      h1 { color: white; line-height: 1.2; font-size: 32px; }
+      label { display: block; margin-top: 24px; font-weight: 600; }
+      input { box-sizing: border-box; display: block; width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #64748b; border-radius: 8px; background: #1e293b; color: white; font: inherit; }
+      button { margin-top: 20px; padding: 12px 22px; border: 0; border-radius: 8px; background: #2563eb; color: white; font: inherit; font-weight: 600; cursor: pointer; }
+      a { color: #93c5fd; }
+      small { color: #94a3b8; }
+      #error { color: #fca5a5; }
+    </style>
+    <script>window.CMS_MANUAL_INIT = true;</script>
+    <script defer src="https://unpkg.com/@sveltia/cms@0.250.1/dist/sveltia-cms.js"></script>
+    <script defer src="./bootstrap.js"></script>
+  </head>
+  <body>
+    <form id="setup">
+      <h1>Textos y traducciones</h1>
+      <p>Edita las introducciones de los coches y los textos de cada generación en español, inglés, portugués, alemán y francés.</p>
+      <p>Al entrar, utiliza <strong>Iniciar sesión con un token de acceso</strong>. Los cambios se guardan en la rama de traducciones del repositorio privado.</p>
+      <label for="preview">Dirección de la web de pruebas</label>
+      <input id="preview" type="url" placeholder="http://192.168.1.20:4321" autocomplete="off" />
+      <small>Opcional. Introduce la dirección que te comparta Daniel para abrir las fichas desde el editor. Se recuerda solo en este navegador.</small>
+      <div><button type="submit">Abrir editor</button></div>
+      <p id="error" role="alert"></p>
+      <details>
+        <summary>Primer acceso con GitHub</summary>
+        <p><a href="https://github.com/settings/personal-access-tokens/new?name=Sveltia%20traducciones&amp;target_name=danmarseo93&amp;expires_in=30&amp;contents=write" target="_blank" rel="noopener noreferrer">Crear un token para Sveltia</a> con la cuenta <strong>danmarseo93</strong>.</p>
+        <p>Selecciona <strong>Only select repositories → cochesconcadena-web</strong> y el permiso <strong>Contents → Read and write</strong>. Copia el token y pégalo directamente en el formulario de acceso de Sveltia.</p>
+      </details>
+    </form>
+    <noscript>Activa JavaScript para abrir el editor.</noscript>
+  </body>
+</html>

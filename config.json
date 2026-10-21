@@ -1,0 +1,167 @@
+{
+  "backend": {
+    "name": "github",
+    "repo": "danmarseo93/cochesconcadena-web",
+    "branch": "codex/traducciones",
+    "auth_methods": [
+      "token"
+    ]
+  },
+  "media_folder": "public/images/coches",
+  "public_folder": "/images/coches",
+  "i18n": {
+    "structure": "multiple_folders",
+    "locales": [
+      "es",
+      "en",
+      "pt",
+      "de",
+      "fr"
+    ],
+    "default_locale": "es",
+    "initial_locales": [
+      "es"
+    ],
+    "omit_default_locale_from_preview_path": true
+  },
+  "collections": [
+    {
+      "name": "coches",
+      "label": "Coches",
+      "label_singular": "Coche",
+      "description": "Introducciones y traducciones de los modelos. Los datos técnicos se gestionan en el administrador. Selecciona un idioma para añadir su traducción. Si queda vacía, la web muestra el texto en español.",
+      "folder": "content/coches",
+      "format": "frontmatter",
+      "extension": "md",
+      "create": false,
+      "delete": false,
+      "duplicate": false,
+      "i18n": true,
+      "slug": {
+        "template": "{{car_id}}",
+        "editable": false
+      },
+      "summary": "{{title}} · {{locales}}",
+      "sortable_fields": [
+        "title",
+        "marca",
+        "modelo"
+      ],
+      "preview_path": "/{{locale}}/{{page_path}}",
+      "fields": [
+        {
+          "name": "car_id",
+          "widget": "hidden",
+          "i18n": "duplicate"
+        },
+        {
+          "name": "title",
+          "label": "Modelo de referencia",
+          "widget": "string",
+          "i18n": "duplicate"
+        },
+        {
+          "name": "marca",
+          "widget": "hidden",
+          "i18n": "duplicate"
+        },
+        {
+          "name": "modelo",
+          "widget": "hidden",
+          "i18n": "duplicate"
+        },
+        {
+          "name": "page_path",
+          "widget": "hidden",
+          "i18n": "duplicate"
+        },
+        {
+          "name": "seo_title",
+          "label": "Título SEO",
+          "widget": "string",
+          "required": false,
+          "i18n": true,
+          "hint": "Opcional. Vacío utiliza el título automático de la ficha."
+        },
+        {
+          "name": "seo_description",
+          "label": "Descripción SEO",
+          "widget": "text",
+          "required": false,
+          "i18n": true
+        },
+        {
+          "name": "body",
+          "label": "Introducción",
+          "widget": "markdown",
+          "required": false,
+          "i18n": true
+        }
+      ]
+    },
+    {
+      "name": "generaciones",
+      "label": "Generaciones",
+      "label_singular": "Generación",
+      "description": "Texto adicional de cada generación. Los identificadores enlazan con la base de datos y no deben cambiarse. Puedes buscar por marca y modelo.",
+      "folder": "content/generaciones",
+      "format": "frontmatter",
+      "extension": "md",
+      "create": false,
+      "delete": false,
+      "duplicate": false,
+      "i18n": true,
+      "slug": {
+        "template": "{{generation_id}}",
+        "editable": false
+      },
+      "summary": "{{title}} · {{locales}}",
+      "sortable_fields": [
+        "title",
+        "marca",
+        "modelo"
+      ],
+      "preview_path": "/{{locale}}/{{page_path}}",
+      "fields": [
+        {
+          "name": "generation_id",
+          "widget": "hidden",
+          "i18n": "duplicate"
+        },
+        {
+          "name": "car_id",
+          "widget": "hidden",
+          "i18n": "duplicate"
+        },
+        {
+          "name": "title",
+          "label": "Generación de referencia",
+          "widget": "string",
+          "i18n": "duplicate"
+        },
+        {
+          "name": "marca",
+          "widget": "hidden",
+          "i18n": "duplicate"
+        },
+        {
+          "name": "modelo",
+          "widget": "hidden",
+          "i18n": "duplicate"
+        },
+        {
+          "name": "page_path",
+          "widget": "hidden",
+          "i18n": "duplicate"
+        },
+        {
+          "name": "body",
+          "label": "Información de la generación",
+          "widget": "markdown",
+          "required": false,
+          "i18n": true
+        }
+      ]
+    }
+  ]
+}
