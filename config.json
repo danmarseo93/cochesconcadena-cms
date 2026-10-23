@@ -24,6 +24,10 @@
     ],
     "omit_default_locale_from_preview_path": true
   },
+  "slug": {
+    "encoding": "ascii",
+    "clean_accents": true
+  },
   "collections": [
     {
       "name": "coches",
@@ -160,6 +164,317 @@
           "widget": "markdown",
           "required": false,
           "i18n": true
+        }
+      ]
+    },
+    {
+      "name": "guias",
+      "label": "Guías",
+      "label_singular": "Guía",
+      "description": "Guías completas y sus traducciones. El archivo vincula los idiomas; la ruta pública se edita por separado.",
+      "folder": "src/content/guias",
+      "media_folder": "/public/images/editorial",
+      "public_folder": "/images/editorial",
+      "format": "frontmatter",
+      "extension": "md",
+      "create": true,
+      "delete": true,
+      "i18n": {
+        "structure": "multiple_folders",
+        "omit_default_locale_from_file_path": true
+      },
+      "slug": {
+        "template": "{{title}}",
+        "editable": false
+      },
+      "summary": "{{title}} · {{locales}}",
+      "sortable_fields": [
+        "title",
+        "date"
+      ],
+      "preview_path": "/{{locale}}/guias/{{slug}}/",
+      "fields": [
+        {
+          "name": "title",
+          "label": "Título",
+          "widget": "string",
+          "i18n": true
+        },
+        {
+          "name": "description",
+          "label": "Descripción SEO y resumen",
+          "widget": "text",
+          "required": false,
+          "i18n": true
+        },
+        {
+          "name": "seo_title",
+          "label": "Título SEO",
+          "widget": "string",
+          "required": false,
+          "i18n": true
+        },
+        {
+          "name": "page_path",
+          "label": "Ruta pública",
+          "widget": "string",
+          "required": false,
+          "i18n": true,
+          "hint": "Sin dominio ni idioma. Ejemplo: guias/mi-guia o guides/my-guide. Vacío conserva la ruta basada en el identificador original.",
+          "pattern": [
+            "^(guias|guides|ratgeber|noticias|news|nachrichten|actualites)/[a-z0-9_-]+/?$",
+            "Escribe una sección y un slug, sin dominio ni prefijo de idioma."
+          ]
+        },
+        {
+          "name": "image",
+          "label": "Imagen principal",
+          "widget": "image",
+          "required": false,
+          "i18n": true
+        },
+        {
+          "name": "image_alt",
+          "label": "Texto alternativo de la imagen",
+          "widget": "string",
+          "required": false,
+          "i18n": true
+        },
+        {
+          "name": "author",
+          "label": "Autor",
+          "widget": "string",
+          "required": false,
+          "i18n": "duplicate"
+        },
+        {
+          "name": "date",
+          "label": "Fecha de publicación",
+          "widget": "datetime",
+          "i18n": "duplicate"
+        },
+        {
+          "name": "noindex",
+          "label": "Excluir de buscadores",
+          "widget": "boolean",
+          "default": false,
+          "required": false,
+          "i18n": true
+        },
+        {
+          "name": "body",
+          "label": "Artículo completo",
+          "widget": "markdown",
+          "i18n": true
+        }
+      ]
+    },
+    {
+      "name": "noticias",
+      "label": "Noticias",
+      "label_singular": "Noticia",
+      "description": "Noticias completas, imágenes, SEO y versiones por idioma.",
+      "folder": "src/content/noticias",
+      "media_folder": "/public/images/editorial",
+      "public_folder": "/images/editorial",
+      "format": "frontmatter",
+      "extension": "md",
+      "create": true,
+      "delete": true,
+      "i18n": {
+        "structure": "multiple_folders",
+        "omit_default_locale_from_file_path": true
+      },
+      "slug": {
+        "template": "{{title}}",
+        "editable": false
+      },
+      "summary": "{{title}} · {{locales}}",
+      "sortable_fields": [
+        "title",
+        "date"
+      ],
+      "preview_path": "/{{locale}}/noticias/{{slug}}/",
+      "fields": [
+        {
+          "name": "title",
+          "label": "Título",
+          "widget": "string",
+          "i18n": true
+        },
+        {
+          "name": "description",
+          "label": "Descripción SEO y resumen",
+          "widget": "text",
+          "required": false,
+          "i18n": true
+        },
+        {
+          "name": "seo_title",
+          "label": "Título SEO",
+          "widget": "string",
+          "required": false,
+          "i18n": true
+        },
+        {
+          "name": "page_path",
+          "label": "Ruta pública",
+          "widget": "string",
+          "required": false,
+          "i18n": true,
+          "hint": "Sin dominio ni idioma. Ejemplo: guias/mi-guia o guides/my-guide. Vacío conserva la ruta basada en el identificador original.",
+          "pattern": [
+            "^(guias|guides|ratgeber|noticias|news|nachrichten|actualites)/[a-z0-9_-]+/?$",
+            "Escribe una sección y un slug, sin dominio ni prefijo de idioma."
+          ]
+        },
+        {
+          "name": "image",
+          "label": "Imagen principal",
+          "widget": "image",
+          "required": false,
+          "i18n": true
+        },
+        {
+          "name": "image_alt",
+          "label": "Texto alternativo de la imagen",
+          "widget": "string",
+          "required": false,
+          "i18n": true
+        },
+        {
+          "name": "author",
+          "label": "Autor",
+          "widget": "string",
+          "required": false,
+          "i18n": "duplicate"
+        },
+        {
+          "name": "date",
+          "label": "Fecha de publicación",
+          "widget": "datetime",
+          "i18n": "duplicate"
+        },
+        {
+          "name": "noindex",
+          "label": "Excluir de buscadores",
+          "widget": "boolean",
+          "default": false,
+          "required": false,
+          "i18n": true
+        },
+        {
+          "name": "body",
+          "label": "Artículo completo",
+          "widget": "markdown",
+          "i18n": true
+        }
+      ]
+    },
+    {
+      "name": "paginas",
+      "label": "Páginas editoriales",
+      "label_singular": "Página editorial",
+      "description": "Motores, distribución e información general. Edita el contenido de las páginas existentes y añade sus traducciones; sus rutas españolas y su estructura se conservan.",
+      "folder": "content/paginas",
+      "media_folder": "/public/images/editorial",
+      "public_folder": "/images/editorial",
+      "format": "frontmatter",
+      "extension": "md",
+      "create": false,
+      "delete": false,
+      "duplicate": false,
+      "i18n": true,
+      "slug": {
+        "editable": false
+      },
+      "summary": "{{title}} · {{kind}} · {{locales}}",
+      "sortable_fields": [
+        "title",
+        "kind"
+      ],
+      "preview_path": "/{{locale}}/{{reference_path}}",
+      "fields": [
+        {
+          "name": "reference_path",
+          "widget": "hidden",
+          "i18n": "duplicate"
+        },
+        {
+          "name": "kind",
+          "widget": "hidden",
+          "i18n": "duplicate"
+        },
+        {
+          "name": "title",
+          "label": "Título",
+          "widget": "string",
+          "i18n": true
+        },
+        {
+          "name": "description",
+          "label": "Descripción SEO",
+          "widget": "text",
+          "required": false,
+          "i18n": true
+        },
+        {
+          "name": "seo_title",
+          "label": "Título SEO",
+          "widget": "string",
+          "required": false,
+          "i18n": true
+        },
+        {
+          "name": "page_path",
+          "label": "Ruta de la traducción",
+          "widget": "string",
+          "required": false,
+          "i18n": true,
+          "hint": "Sin dominio ni idioma. El español conserva siempre su ruta original. Vacío usa la ruta original con el prefijo del idioma."
+        },
+        {
+          "name": "image",
+          "label": "Imagen principal",
+          "widget": "image",
+          "required": false,
+          "i18n": true
+        },
+        {
+          "name": "image_alt",
+          "label": "Texto alternativo de la imagen",
+          "widget": "string",
+          "required": false,
+          "i18n": true
+        },
+        {
+          "name": "date",
+          "label": "Fecha de actualización",
+          "widget": "datetime",
+          "i18n": "duplicate"
+        },
+        {
+          "name": "noindex",
+          "label": "Excluir de buscadores",
+          "widget": "boolean",
+          "required": false,
+          "default": false,
+          "i18n": "duplicate"
+        },
+        {
+          "name": "intro",
+          "label": "Entradilla",
+          "widget": "text",
+          "required": false,
+          "i18n": true,
+          "hint": "Texto opcional bajo el título. El directorio de motores utiliza este campo."
+        },
+        {
+          "name": "body",
+          "label": "Contenido completo",
+          "widget": "markdown",
+          "i18n": true,
+          "hint": "Se conserva el HTML original. Puedes editarlo en modo código o escribir contenido nuevo en Markdown."
         }
       ]
     }
