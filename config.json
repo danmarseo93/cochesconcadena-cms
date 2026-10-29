@@ -33,7 +33,7 @@
       "name": "coches",
       "label": "Coches",
       "label_singular": "Coche",
-      "description": "Introducciones y traducciones de los modelos. Los datos técnicos se gestionan en el administrador. Selecciona un idioma para añadir su traducción. Si queda vacía, la web muestra el texto en español.",
+      "description": "Introducciones y traducciones de los modelos. Los datos técnicos se gestionan en el administrador. Selecciona un idioma para añadir su traducción. Si queda vacía, la web muestra el texto en español. Banderas: ✓ con texto; ❌ falta texto. No indica revisión manual.",
       "folder": "content/coches",
       "format": "frontmatter",
       "extension": "md",
@@ -107,7 +107,7 @@
       "name": "generaciones",
       "label": "Generaciones",
       "label_singular": "Generación",
-      "description": "Texto adicional de cada generación. Los identificadores enlazan con la base de datos y no deben cambiarse. Puedes buscar por marca y modelo.",
+      "description": "Texto adicional de cada generación. Los identificadores enlazan con la base de datos y no deben cambiarse. Puedes buscar por marca y modelo. Banderas: ✓ con texto; ❌ falta texto. No indica revisión manual.",
       "folder": "content/generaciones",
       "format": "frontmatter",
       "extension": "md",
@@ -171,7 +171,7 @@
       "name": "guias",
       "label": "Guías",
       "label_singular": "Guía",
-      "description": "Guías completas y sus traducciones. El archivo vincula los idiomas; la ruta pública se edita por separado.",
+      "description": "Guías completas y sus traducciones. El archivo vincula los idiomas; la ruta pública se edita por separado. Banderas: ✓ con texto; ❌ falta texto. No indica revisión manual.",
       "folder": "src/content/guias",
       "media_folder": "/public/images/editorial",
       "public_folder": "/images/editorial",
@@ -254,6 +254,14 @@
           "i18n": "duplicate"
         },
         {
+          "name": "updated",
+          "label": "Última actualización del contenido",
+          "widget": "datetime",
+          "required": false,
+          "i18n": true,
+          "hint": "Opcional. Cambia esta fecha cuando revises el contenido; no se actualiza al compilar ni al corregir solo el SEO."
+        },
+        {
           "name": "noindex",
           "label": "Excluir de buscadores",
           "widget": "boolean",
@@ -273,7 +281,7 @@
       "name": "noticias",
       "label": "Noticias",
       "label_singular": "Noticia",
-      "description": "Noticias completas, imágenes, SEO y versiones por idioma.",
+      "description": "Noticias completas, imágenes, SEO y versiones por idioma. Banderas: ✓ con texto; ❌ falta texto. No indica revisión manual.",
       "folder": "src/content/noticias",
       "media_folder": "/public/images/editorial",
       "public_folder": "/images/editorial",
@@ -356,6 +364,14 @@
           "i18n": "duplicate"
         },
         {
+          "name": "updated",
+          "label": "Última actualización del contenido",
+          "widget": "datetime",
+          "required": false,
+          "i18n": true,
+          "hint": "Opcional. Cambia esta fecha cuando revises el contenido; no se actualiza al compilar ni al corregir solo el SEO."
+        },
+        {
           "name": "noindex",
           "label": "Excluir de buscadores",
           "widget": "boolean",
@@ -375,7 +391,7 @@
       "name": "paginas",
       "label": "Páginas editoriales",
       "label_singular": "Página editorial",
-      "description": "Motores, distribución e información general. Edita el contenido de las páginas existentes y añade sus traducciones; sus rutas españolas y su estructura se conservan.",
+      "description": "Motores, distribución e información general. Edita el contenido de las páginas existentes y añade sus traducciones; sus rutas españolas y su estructura se conservan. Banderas: ✓ con texto; ❌ falta texto. No indica revisión manual.",
       "folder": "content/paginas",
       "media_folder": "/public/images/editorial",
       "public_folder": "/images/editorial",
